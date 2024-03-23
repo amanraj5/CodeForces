@@ -6,20 +6,21 @@ int main()
     cin >> t;
     while (t--)
     {
-        int n, k;
+        long long n, k;
         cin >> n >> k;
-        bool ans=false;
+        bool ans = false;
         for (int i = 0; i < 2; i++)
         {
-            if (n - k * i >= 0 and (n - k * i) % 2 == 0)
+            if ((n - (i * k)) >= 0 and (n - (i * k)) % 2 == 0)
             {
-                ans=true;
-                
+                ans = true;
                 break;
             }
         }
-        if(ans) cout << "YES\n";
-        else cout<<"NO\n";
+        if (ans)
+            cout << "YES\n";
+        else
+            cout << "NO\n";
     }
     return 0;
 }
