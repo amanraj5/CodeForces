@@ -1,5 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
+
 int main()
 {
     int t;
@@ -7,6 +8,7 @@ int main()
     while (t--)
     {
         
+
     }
     return 0;
 }
