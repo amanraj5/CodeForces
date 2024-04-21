@@ -8,11 +8,15 @@ int main()
     {
         int n;
         cin >> n;
-        vector<int> v(n);
-        for (int i = 0; i < n; i++)
+        int res = 0;
+        for (int i = 1; i <= n; i++)
         {
-            cin >> v[i];
+            int x;
+            cin>>x;
+            res = __gcd(res, abs(x - i));
         }
+
+        cout << res << endl;
     }
     return 0;
 }
