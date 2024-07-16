@@ -7,7 +7,7 @@ void solve()
     int n, k;
     cin >> n >> k;
 
-    cout << (n - 1) / (k - 1) << endl;
+    cout << (n + k - 3) / (k - 1) << endl;
 }
 int main()
 {
