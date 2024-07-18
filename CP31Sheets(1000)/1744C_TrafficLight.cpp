@@ -9,22 +9,45 @@ void solve()
     cin >> n >> c;
     string s;
     cin >> s;
-    s = s + s;
-    int last = -1;
+    if(c=='g'){
+        cout<<0<<endl;
+        return;
+    }
+    int first = -1;
     int ans = 0;
-    for (int i = 0; i < n + n; i++)
+    for (int i = 0; i < n; i++)
     {
-        if (s[i] == 'g' && last != -1)
+        if (s[i] == 'g')
         {
-            ans = max(ans, i - last);
-            if (i > n)
-                break;
-        }
-        else if (s[i] == c && i < n)
-        {
-            last = i;
+            first = i;
+            break;
         }
     }
+    for (int i = 0; i < n; i++)
+    {
+        if (s[i] == c)
+        {
+            int cnt = 0, flag = 0;
+            for (int j = i + 1; j < n; j++)
+            {
+                cnt++;
+                if (s[j] == 'g')
+                {
+                    flag++;
+                    break;
+                }
+            }
+            i = i + cnt;
+            if (flag)
+            {
+                ans = max(ans, cnt);
+            }
+            else
+            {
+                ans = max(ans, cnt + 1 + first);
+            }
+        }
+        }
     cout << ans << endl;
 }
 int main()
